@@ -42,6 +42,8 @@ import { formatDuration, formatPrice } from "~/lib/utils";
 import { renderMarkdown } from "~/lib/markdown.server";
 import { resolveCountry } from "~/lib/country.server";
 import { calculatePppPrice, getCountryTierInfo } from "~/lib/ppp";
+import { getCourseRating, getUserCourseRating } from "~/services/reviewService";
+import { StarRatingDisplay, StarRatingInput } from "~/components/star-rating";
 
 export function meta({ data: loaderData }: Route.MetaArgs) {
   const title = loaderData?.course?.title ?? "Course";
@@ -102,6 +104,9 @@ export async function loader({ params, request }: Route.LoaderArgs) {
     : courseWithDetails.price;
   const tierInfo = getCountryTierInfo(country);
 
+  const { average: ratingAverage, total: ratingTotal } = getCourseRating(course.id);
+  const userRating = currentUserId ? getUserCourseRating(currentUserId, course.id) : null;
+
   return {
     course: courseWithDetails,
     salesCopyHtml,
@@ -113,6 +118,9 @@ export async function loader({ params, request }: Route.LoaderArgs) {
     currentUserId,
     pppPrice,
     tierInfo,
+    ratingAverage,
+    ratingTotal,
+    userRating,
   };
 }
 
@@ -181,6 +189,9 @@ export default function CourseDetail({ loaderData }: Route.ComponentProps) {
     currentUserId,
     pppPrice,
     tierInfo,
+    ratingAverage,
+    ratingTotal,
+    userRating,
   } = loaderData;
   const isInstructor = currentUserId === course.instructorId;
   const [searchParams, setSearchParams] = useSearchParams();
@@ -320,7 +331,19 @@ export default function CourseDetail({ loaderData }: Route.ComponentProps) {
               {formatDuration(totalDuration, true, false, false)} total
             </span>
           )}
+          {ratingAverage !== null && (
+            <StarRatingDisplay rating={ratingAverage} total={ratingTotal} />
+          )}
         </div>
+        {enrolled && (
+          <div className="mt-3">
+            <StarRatingInput
+              key={currentUserId ?? 0}
+              courseId={course.id}
+              initialRating={userRating}
+            />
+          </div>
+        )}
       </div>
 
       {/* Two-column: sales copy left, sidebar right */}
