@@ -59,6 +59,7 @@ async function seed() {
     DROP TABLE IF EXISTS teams;
     DROP TABLE IF EXISTS purchases;
     DROP TABLE IF EXISTS enrollments;
+    DROP TABLE IF EXISTS lesson_bookmarks;
     DROP TABLE IF EXISTS lessons;
     DROP TABLE IF EXISTS modules;
     DROP TABLE IF EXISTS courses;
@@ -109,6 +110,19 @@ async function seed() {
       avatarUrl: "https://api.dicebear.com/9.x/avataaars/svg?seed=marcus",
       bio: "Full-stack developer and API architect specializing in Node.js and cloud infrastructure. Has built and scaled APIs serving millions of requests daily. Conference speaker and open-source contributor.",
       createdAt: daysAgo(95),
+    })
+    .returning()
+    .all();
+
+  const [instructor3] = db
+    .insert(schema.users)
+    .values({
+      name: "Dr. Evil",
+      email: "dr.evil@ralph.dev",
+      role: UserRole.Instructor,
+      avatarUrl: "https://api.dicebear.com/9.x/avataaars/svg?seed=drEvil",
+      bio: "Visionary strategist, self-made megalomaniac, and the world's foremost authority on global power acquisition. Formerly of several unnamed shadow organisations. Author of the unpublished manuscript 'You Too Can Rule Everything'. Currently accepting students — for a price.",
+      createdAt: daysAgo(90),
     })
     .returning()
     .all();
@@ -168,7 +182,7 @@ async function seed() {
     .all();
 
   console.log(
-    `Created ${1 + 2 + students.length + 1} users (1 admin, 2 instructors, ${students.length + 1} students).`
+    `Created ${1 + 3 + students.length + 1} users (1 admin, 3 instructors, ${students.length + 1} students).`
   );
 
   // ─── Categories ───
@@ -181,6 +195,7 @@ async function seed() {
       { name: "Data Science", slug: "data-science" },
       { name: "DevOps", slug: "devops" },
       { name: "Marketing", slug: "marketing" },
+      { name: "Self Help / Personal Development", slug: "self-help-personal-development" },
     ])
     .returning()
     .all();
@@ -1794,8 +1809,8 @@ You've completed the Building REST APIs course. You now have the skills to build
   );
 
   console.log("\n✓ Seed complete!");
-  console.log("  Users: 9 (1 admin, 2 instructors, 6 students)");
-  console.log("  Categories: 5");
+  console.log("  Users: 10 (1 admin, 3 instructors, 6 students)");
+  console.log("  Categories: 6");
   console.log(
     `  Courses: 2 (${course1LessonIds.length} + ${course2LessonIds.length} lessons)`
   );
