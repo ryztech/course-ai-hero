@@ -29,6 +29,13 @@
       "when": 1746835200000,
       "tag": "0003_course_reviews",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1779289876824,
+      "tag": "0004_dazzling_spot",
+      "breakpoints": true
     }
   ]
 }
