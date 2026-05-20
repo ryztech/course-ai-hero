@@ -1161,6 +1161,77 @@ You've completed the Building REST APIs course. You now have the skills to build
     `Created course "${course2.title}" with ${c2Modules.length} modules and ${course2LessonIds.length} lessons.`
   );
 
+  // ─── Course 3: How to Achieve Total World Domination (Dr. Evil) ───
+
+  const [course3] = db
+    .insert(schema.courses)
+    .values({
+      title: "How to Achieve Total World Domination",
+      slug: "how-to-achieve-total-world-domination",
+      description: `You have ambitions. Grand ones. The kind that make lesser people uncomfortable at dinner parties.
+
+This course is your blueprint. Structured across five ruthlessly logical modules, it covers everything a serious world domination candidate needs: the correct mindset, the acquisition of resources, the cultivation of influence, the consolidation of control, and the final, glorious execution of your endgame.
+
+Dr. Evil has spent decades refining these methods through trial, error, and a handful of near-misses that were frankly the fault of incompetent henchmen. Now, for the first time, he is sharing the complete system with a select group of motivated students.
+
+**Five modules. Twenty lessons. One planet.**
+
+If you are reading this, you are already ahead of 99.9% of the population. The only question is whether you are ready to act.`,
+      salesCopy: `## Are You Thinking Small Enough?
+
+Most self-help courses will tell you to set "SMART goals." Specific. Measurable. Achievable. Relevant. Time-bound.
+
+*Achievable.*
+
+What a tragically limited word. What a monument to mediocrity. What an insult to your potential.
+
+This course does not deal in achievable. This course deals in **inevitable**.
+
+## What You Will Master
+
+Over five precisely engineered modules, you will learn to think, resource, influence, control, and execute at a scale your current self cannot yet comprehend.
+
+### Module 1 — Mindset
+You cannot dominate the world with the psychology of someone who celebrates finishing a 5K. We will rewire your thinking from the ground up. Ambition calibration. Patience as a weapon. The strategic value of being underestimated.
+
+### Module 2 — Resources
+Every empire requires a material base. You will learn how to acquire capital, assets, and infrastructure from a standing start — through leverage, positioning, and methods that are technically legal in most jurisdictions.
+
+### Module 3 — Influence
+Direct power is brittle. Influence is resilient. You will learn to build alliances, shape narratives, and cultivate followers who believe they are acting of their own free will. They are not. But they will be happy.
+
+### Module 4 — Control
+Acquiring power is one thing. Keeping it is another. This module covers the consolidation of control, the neutralisation of opposition, and the construction of systems so resilient that your position becomes, for all practical purposes, unassailable.
+
+### Module 5 — Endgame
+Everything has been leading here. The final execution. The moment when all the preparation, patience, and planning converges into a single, decisive act of total global dominance.
+
+## Who Is This Course For?
+
+This course is for individuals who have tried conventional success and found it wanting. For those who look at the world and think: *I could run this better.* For the rare few who are not deterred by the word "impossible" but are, in fact, energised by it.
+
+It is not for the faint of heart. It is not for those who need encouragement. It is for those who simply need a plan.
+
+## About Your Instructor
+
+Dr. Evil has operated at the highest levels of global power acquisition for longer than most governments have existed. He has built organisations, dismantled others, and maintained an impeccable record of zero successful prosecutions. He teaches because he can afford to. He teaches you because he has decided you are worth teaching.
+
+This may be the most important decision either of you ever makes.
+
+**Enrol now. The world will not dominate itself.**`,
+      instructorId: instructor3.id,
+      categoryId: catBySlug["self-help-personal-development"].id,
+      status: CourseStatus.Published,
+      price: 66600,
+      pppEnabled: true,
+      createdAt: daysAgo(60),
+      updatedAt: daysAgo(2),
+    })
+    .returning()
+    .all();
+
+  console.log(`Created course "${course3.title}".`);
+
   // ─── Quizzes ───
   // Add quizzes to some lessons in both courses
 
@@ -1812,7 +1883,7 @@ You've completed the Building REST APIs course. You now have the skills to build
   console.log("  Users: 10 (1 admin, 3 instructors, 6 students)");
   console.log("  Categories: 6");
   console.log(
-    `  Courses: 2 (${course1LessonIds.length} + ${course2LessonIds.length} lessons)`
+    `  Courses: 3 (${course1LessonIds.length} + ${course2LessonIds.length} lessons + course 3 with 0 lessons so far)`
   );
   console.log("  Quizzes: 3");
   console.log("  Enrollments: 7");
