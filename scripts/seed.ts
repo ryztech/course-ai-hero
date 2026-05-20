@@ -1232,6 +1232,490 @@ This may be the most important decision either of you ever makes.
 
   console.log(`Created course "${course3.title}".`);
 
+  // ─── Course 3 Modules & Lessons ───
+
+  const c3Modules = [
+    {
+      title: "Mindset",
+      lessons: [
+        {
+          title: "The Megalomaniac Mindset",
+          duration: 14,
+          content: `## The Megalomaniac Mindset
+
+Most people are trained from birth to want just enough. A comfortable salary. A nice house. Recognition from peers they secretly resent. This is not ambition. This is managed disappointment.
+
+World domination begins with a fundamental reorientation of desire. You must want *everything* — not out of greed, but out of a deep conviction that you are the correct person to have it.
+
+### The Three Pillars
+
+1. **Unconditional self-belief** — not confidence, which is contingent on evidence, but belief, which precedes it
+2. **Scope expansion** — the deliberate practice of making your goals larger every time you achieve one
+3. **Immunity to consensus** — the ability to hold a position that no one around you agrees with, indefinitely, without wavering
+
+Begin this week by identifying the largest thing you currently want. Then double it. Then double it again. Notice the discomfort. That discomfort is the boundary of your current ambition. We will be expanding it considerably.`,
+        },
+        {
+          title: "Patience as a Strategic Weapon",
+          duration: 12,
+          content: `## Patience as a Strategic Weapon
+
+The amateur wants the world by Friday. The professional understands that the most powerful moves in history took decades to execute and were invisible until the moment they became inevitable.
+
+Patience is not passivity. It is the disciplined accumulation of advantage while your opposition grows complacent.
+
+### The Compounding Effect of Time
+
+Consider: a person who makes one well-timed, well-prepared move per year will, over a decade, have executed ten such moves. Their opponent, who reacts impulsively to every development, will have exhausted themselves on dozens of moves that cancel each other out.
+
+**Patience is leverage.** It costs you nothing and costs your opposition everything, because they do not know how to wait.
+
+### Exercise
+
+Identify one thing you are currently rushing. Stop rushing it. Let it develop at the speed it requires. Observe what changes when you remove artificial urgency from the equation.`,
+        },
+        {
+          title: "The Art of Being Underestimated",
+          duration: 10,
+          content: `## The Art of Being Underestimated
+
+This is, perhaps, the most valuable skill in this entire course — and the one that most people with genuine ambition refuse to practise, because their ego gets in the way.
+
+Being underestimated is a **strategic asset of the highest order**. When your opponents do not take you seriously, they do not prepare for you. When they do not prepare for you, they are vulnerable to you.
+
+### How to Cultivate Underestimation
+
+- Speak less than you know
+- Achieve more than you announce
+- Allow others to take credit for small wins while you accumulate large ones
+- Present as agreeable in meetings you do not intend to honour
+
+The goal is not to be invisible — it is to be *legible as non-threatening*. There is a difference. One invites curiosity. The other invites dismissal. You want the latter.
+
+Study those who have used this technique throughout history. They are, by definition, not the people you immediately think of.`,
+        },
+        {
+          title: "Visualising Total Victory",
+          duration: 11,
+          content: `## Visualising Total Victory
+
+Visualisation is not wishful thinking. It is cognitive rehearsal — the practice of running your success scenario in sufficient detail that your brain begins to treat it as an expected outcome rather than a fantasy.
+
+The difference between a fantasy and a plan is specificity.
+
+### The Visualisation Protocol
+
+Set aside fifteen minutes each day. Do not use this time to imagine *having* succeeded. Use it to imagine the moment of transition — the exact sequence of events that moves you from your current position to total victory.
+
+What do you see? Who is in the room? What are they saying? What do you say back?
+
+Run the scenario until it bores you. Boredom is the signal that your brain has accepted it as plausible. Once something is plausible to your brain, it will begin routing your behaviour toward it automatically.
+
+This is not mysticism. This is how preparation works at scale.`,
+        },
+      ],
+    },
+    {
+      title: "Resources",
+      lessons: [
+        {
+          title: "Bootstrapping Your Evil Empire",
+          duration: 15,
+          content: `## Bootstrapping Your Evil Empire
+
+Every empire begins with nothing. Or more precisely: with what is available, which is always more than it appears.
+
+The first resource error most aspiring dominators make is waiting until they have sufficient resources before beginning. This is backwards. Resources follow commitment. Commitment precedes resources.
+
+### Starting Points
+
+- **Information asymmetry** — knowing something useful that others do not is a resource
+- **Time arbitrage** — being willing to work on a longer timescale than competitors is a resource
+- **Network access** — a single well-placed relationship can unlock more than years of individual effort
+
+### The Bootstrap Sequence
+
+1. Identify the smallest viable unit of your empire
+2. Execute that unit to completion
+3. Reinvest everything into the next unit
+4. Do not diversify until you have mastered consolidation
+
+Empires are not built in parallel. They are built in sequence, each stage funding the next. Do not attempt to run five initiatives simultaneously. Run one, dominate it, and move.`,
+        },
+        {
+          title: "Acquiring Assets Through Leverage",
+          duration: 16,
+          content: `## Acquiring Assets Through Leverage
+
+Leverage is the use of something you have to obtain something you want, without parting with what you have. It is the fundamental mechanism by which individuals accumulate power disproportionate to their starting position.
+
+### Forms of Leverage
+
+**Financial leverage** — using borrowed capital to control assets larger than your equity. The key is that the asset must generate returns exceeding the cost of borrowing.
+
+**Reputational leverage** — the ability to open doors, attract partners, and deter opposition based solely on how you are perceived. Reputation compounds silently and, once established, operates without effort.
+
+**Informational leverage** — controlling access to knowledge that others need. Data, relationships, proprietary processes — anything that others must come to you to access.
+
+### The Golden Rule of Leverage
+
+Never use leverage on something you cannot afford to lose. Leverage amplifies outcomes in both directions. The experienced operator uses it surgically. The novice uses it recklessly and wonders why they keep starting over.`,
+        },
+        {
+          title: "Building Infrastructure That Scales",
+          duration: 13,
+          content: `## Building Infrastructure That Scales
+
+Amateur operators build things that require them personally to function. Professional operators build things that function regardless of whether they are personally present.
+
+This distinction is the difference between owning a job and owning an empire.
+
+### Principles of Scalable Infrastructure
+
+**Systematise everything** — if you have done something twice, document it. If you have documented it, delegate it. If you have delegated it, measure it.
+
+**Build for ten times your current scale** — infrastructure designed for your current size will need to be rebuilt the moment you grow. Design for where you are going, not where you are.
+
+**Single points of failure are existential risks** — any component of your operation that can bring everything down if it fails must be either redundant or eliminated.
+
+### The Infrastructure Audit
+
+Map every critical function in your current operation. For each one, ask: what happens if this fails tonight? If the answer is "everything stops," you have an infrastructure problem. Fix it before you scale.`,
+        },
+        {
+          title: "Financial Instruments for the Aspiring Overlord",
+          duration: 18,
+          content: `## Financial Instruments for the Aspiring Overlord
+
+Money is not wealth. Money is a claim on wealth that other people have agreed to honour. Understanding this distinction is the beginning of financial sophistication.
+
+The aspiring overlord does not accumulate money. They accumulate *positions* — ownership stakes, contractual rights, and strategic options that generate money as a by-product.
+
+### Key Instruments
+
+**Equity** — ownership in productive enterprises. The only instrument that, in principle, has no upper bound.
+
+**Options and warrants** — the right, but not the obligation, to acquire something at a predetermined price. Asymmetric upside with capped downside.
+
+**Debt instruments** — both as borrower (cheap capital for acquisition) and lender (returns plus influence over the borrower's decision-making).
+
+**Real assets** — land, infrastructure, productive capacity. Things that exist regardless of what financial markets decide to believe on any given day.
+
+The goal is not to master all of these. The goal is to understand them well enough to deploy each at the appropriate moment and to never be exploited by someone who understands them better than you do.`,
+        },
+      ],
+    },
+    {
+      title: "Influence",
+      lessons: [
+        {
+          title: "The Architecture of Alliance",
+          duration: 12,
+          content: `## The Architecture of Alliance
+
+No one dominates the world alone. This is not a limitation — it is a design feature. Alliances multiply your effective reach by orders of magnitude. The skill is in constructing them so that they serve your purposes even when your allies believe they are serving their own.
+
+### Types of Alliance
+
+**Transactional alliances** — built on mutual self-interest, explicit terms, and finite duration. Clean, reliable, and unsentimental. Appropriate for most purposes.
+
+**Ideological alliances** — built on shared belief. These are more durable than transactional alliances because they survive the expiry of the original terms. They are also harder to exit.
+
+**Asymmetric alliances** — where one party benefits more than they realise. Ethically complex, strategically powerful, and dangerous if the asymmetry is discovered.
+
+### Building Durable Alliances
+
+Make it more valuable for your allies to stay allied with you than to defect. This means continuously generating value for them, maintaining information advantages they cannot replicate elsewhere, and ensuring that the cost of defection is visible and credible without ever being stated.`,
+        },
+        {
+          title: "Narrative Control at Scale",
+          duration: 14,
+          content: `## Narrative Control at Scale
+
+Whoever controls the story controls the outcome. This has been true in every domain — political, commercial, social — throughout recorded history. It is more true now than it has ever been.
+
+### The Three Layers of Narrative
+
+**The surface narrative** — what people say publicly about you, your organisation, and your intentions. This is the most visible and the easiest to manage.
+
+**The ambient narrative** — the background assumptions that people bring to every interaction with you. Harder to manage, but far more powerful. This is the layer where reputations operate.
+
+**The internal narrative** — what your allies, employees, and opponents say to themselves when they think about you. The most difficult to influence and the most decisive.
+
+### Narrative Intervention
+
+You cannot control what people think. You can control what information is available to them, what frameworks they have been given to interpret it, and what they stand to gain or lose by adopting particular conclusions.
+
+Master these three levers and narrative control follows naturally.`,
+        },
+        {
+          title: "Building a Loyal Following",
+          duration: 11,
+          content: `## Building a Loyal Following
+
+Followers are not employees. Employees do what they are paid to do. Followers do what they believe in — which, if you have done your work correctly, happens to be what you need them to do.
+
+The distinction matters because followers are self-motivating. They recruit other followers. They defend you without being asked. They interpret your setbacks as temporary and your successes as confirmation of destiny.
+
+### The Follower Acquisition Framework
+
+**Give them an enemy** — belonging to a cause requires having something to be against. Define the opposition clearly, credibly, and memorably.
+
+**Give them a role** — people follow leaders who make them feel important to the outcome. Every follower should understand precisely how their contribution connects to the larger mission.
+
+**Give them wins** — early, frequent, visible victories create the psychological momentum that sustains a following through the difficult middle period of any long campaign.
+
+**Give them identity** — the most loyal followers are those for whom following you has become part of who they are. This is the highest level of follower commitment and must be earned, not manufactured.`,
+        },
+        {
+          title: "Managing Defectors and Doubters",
+          duration: 10,
+          content: `## Managing Defectors and Doubters
+
+In any sufficiently large operation, defection and doubt are inevitable. The question is not how to prevent them — it is how to manage them so that they do not propagate.
+
+### The Defector Typology
+
+**The disappointed loyalist** — believed in you and feels let down by a specific event or decision. Recoverable with direct engagement, honest acknowledgement, and a credible path back.
+
+**The opportunist** — was never truly committed and is leaving for a better offer. Not worth recovering. Ensure they leave with nothing that can harm you.
+
+**The ideological defector** — has concluded that your mission is wrong. The most dangerous type because they will not merely leave — they will organise opposition. Isolate before they consolidate.
+
+### The Doubter
+
+Doubters who express their doubts privately are valuable intelligence assets. They tell you where your operation is vulnerable. Create conditions in which private doubt is surfaced safely.
+
+Doubters who express their doubts publicly are a different matter. Address their specific concerns where they are valid. Where they are not, do not argue — demonstrate.`,
+        },
+      ],
+    },
+    {
+      title: "Control",
+      lessons: [
+        {
+          title: "Consolidating Power Without Leaving Fingerprints",
+          duration: 16,
+          content: `## Consolidating Power Without Leaving Fingerprints
+
+The consolidation of power is the most delicate phase of any dominance campaign. It is the phase at which most promising operations are exposed, reversed, or destroyed — not because they lacked power, but because they acquired it visibly.
+
+Power consolidated in the open invites resistance. Power consolidated quietly becomes structural — woven into the fabric of how things work — before anyone has had the opportunity to object.
+
+### Consolidation Techniques
+
+**Institutional capture** — placing your people in positions of structural authority within existing institutions rather than building new ones. This is slower but far more durable.
+
+**Process dependency** — making the systems others rely on pass through your points of control. Over time, what begins as convenience becomes necessity.
+
+**Information centralisation** — ensuring that the most important information flows to you before it flows to anyone else. Not through restriction, which creates resentment, but through positioning yourself as the most useful node in every relevant network.
+
+### The Fingerprint Rule
+
+If you can trace a decision back to you through fewer than three steps, you are operating too directly. Add intermediaries. Introduce complexity. Let the consolidation happen through processes rather than people.`,
+        },
+        {
+          title: "Neutralising Opposition",
+          duration: 13,
+          content: `## Neutralising Opposition
+
+Opposition is not a problem to be eliminated. It is a force to be redirected, absorbed, or rendered irrelevant.
+
+Elimination is rarely necessary and always costly. It creates martyrs, draws scrutiny, and consumes resources. The sophisticated operator neutralises opposition through other means.
+
+### Neutralisation Strategies
+
+**Incorporation** — bring the opposition inside the tent. Give them a role, a title, a stake. Most opposition is motivated by exclusion. Inclusion resolves it.
+
+**Exhaustion** — oppose the opposition's initiatives with enough friction that they expend their energy on navigation rather than action. Committees are the traditional instrument of this strategy.
+
+**Discrediting** — ensure that the opposition's record, credibility, or associations are visible and unflattering to the audiences they most need to persuade. This does not require fabrication; it requires curation.
+
+**Irrelevance** — move the field of play to terrain where the opposition's strengths do not apply. If they are strong on one dimension, compete on another.
+
+The goal in each case is the same: a former opponent who is either on your side, too tired to continue, no longer credible, or fighting a battle that no longer matters.`,
+        },
+        {
+          title: "Building Resilient Systems of Control",
+          duration: 15,
+          content: `## Building Resilient Systems of Control
+
+A system of control that depends on any single person — including you — is not a system. It is a vulnerability.
+
+The goal of this module is to construct systems so robust that they continue to function under conditions of significant disruption, including the disruption of your own absence.
+
+### Resilience Principles
+
+**Redundancy** — every critical function must have at least one backup. Not a theoretical backup — an operational one that is regularly tested.
+
+**Decentralisation** — distribute decision-making authority to the lowest level at which it can be competently exercised. Central systems are efficient until they fail catastrophically. Distributed systems fail gracefully.
+
+**Feedback loops** — build mechanisms by which the system monitors its own health and surfaces problems before they become crises. A system that only reports successes is a system that surprises you with failures.
+
+**Succession** — at every level of your operation, there must be a person who can step into the role above them immediately. This is uncomfortable to implement because it requires investing in people who could theoretically replace you. Do it anyway. The alternative is fragility.`,
+        },
+        {
+          title: "The Loyal Inner Circle",
+          duration: 12,
+          content: `## The Loyal Inner Circle
+
+At the centre of every durable power structure is a small group of people whose loyalty is genuine, deep, and not primarily contingent on their personal gain.
+
+This group is not your largest asset. It is your most important one. Everything else can be rebuilt. If the inner circle fails, it cannot be rebuilt — only replaced, which is a different thing entirely.
+
+### Selecting the Inner Circle
+
+The primary criterion is not competence. Competence can be found and hired. The primary criterion is **alignment of character** — people who, when tested in a situation you did not anticipate, will make the choice you would want them to make, because it is the choice they believe is right.
+
+Secondary criteria: discretion, resilience, and the ability to disagree with you privately without defecting publicly.
+
+### Maintaining the Inner Circle
+
+- Create conditions in which honesty is rewarded and flattery is penalised
+- Ensure their material interests are genuinely served by your success
+- Invest in their development and visibility — people stay where they feel they are growing
+- Never ask them to do something that would compromise their honour. You may need their honour intact later.`,
+        },
+      ],
+    },
+    {
+      title: "Endgame",
+      lessons: [
+        {
+          title: "Timing the Final Move",
+          duration: 14,
+          content: `## Timing the Final Move
+
+Everything in this course has been preparation for this moment. The final move is not the most difficult — if you have done the preceding work correctly, it may be almost anticlimactic. What is difficult is knowing when the moment has arrived.
+
+### Indicators of Readiness
+
+**Resource sufficiency** — you have the material base required to execute and sustain the outcome you are seeking. Not comfort — sufficiency. There is a difference.
+
+**Opposition weakness** — your primary opposition is either neutralised, incorporated, or exhausted. The landscape has no significant force capable of reversing your move within the window required.
+
+**Alliance stability** — your key allies are committed, informed (to the degree necessary), and prepared to act.
+
+**Narrative readiness** — the story of what is happening can be told in a way that is either accepted or at least not effectively contested.
+
+### The Cost of Mistiming
+
+Moving too early means exposure before your position is consolidated. Moving too late means allowing a window of vulnerability to reopen. The experienced operator moves when the indicators are met, not when the calendar demands it.
+
+Patience, as we covered in Module 1, is a strategic weapon. This is where it pays off.`,
+        },
+        {
+          title: "Executing the Plan",
+          duration: 17,
+          content: `## Executing the Plan
+
+Execution is where plans meet reality, and reality, as you have no doubt noticed, does not read plans before it shows up.
+
+The goal of execution is not to follow the plan precisely. It is to achieve the outcome the plan was designed to achieve, adapting as necessary to conditions as they are rather than as they were anticipated.
+
+### Execution Principles
+
+**Speed through the critical window** — the moment you begin, time begins working against you. Opposition organises, information leaks, circumstances shift. Move quickly through the irreversible phases.
+
+**Decision authority** — at each level of your operation, the people executing must have clear authority to make decisions within their domain without waiting for approval. Approval chains kill execution velocity.
+
+**Communication discipline** — during execution, communications should be minimal, precise, and authenticated. This is not the time for nuance or consultation. It is the time for instructions and confirmations.
+
+**Contingency activation** — you have prepared contingencies. If the trigger conditions are met, activate them without hesitation. The contingency exists precisely so that you do not have to make a high-stakes decision under pressure.
+
+### After the First Move
+
+The first move rarely ends the game. It changes the game. Your job after the first move is to read the new game clearly and continue executing toward the outcome, not toward the original plan.`,
+        },
+        {
+          title: "Managing the Transition",
+          duration: 11,
+          content: `## Managing the Transition
+
+The transition period — between the execution of the final move and the stabilisation of the new order — is the most dangerous phase in any dominance campaign. More operations have failed in the transition than in the execution.
+
+### Why Transitions Fail
+
+**Victory euphoria** — the tendency to relax operational discipline at precisely the moment when it is most required. Celebrate later. Consolidate now.
+
+**Coalition fracture** — alliances built to achieve an outcome do not automatically persist after the outcome is achieved. The shared enemy is gone; the shared interests may not survive contact with actual power.
+
+**Legitimacy deficit** — new orders require legitimacy to stabilise. Legitimacy comes from outcomes people value, not from the fact of power. Move quickly to deliver visible, concrete benefits to the constituencies whose ongoing support you require.
+
+### Transition Architecture
+
+Before you execute the final move, you must have a transition plan that covers at minimum: the first 72 hours, the first 30 days, and the first year. Each phase has different priorities and different risks. Know them in advance.`,
+        },
+        {
+          title: "Securing Your Legacy",
+          duration: 13,
+          content: `## Securing Your Legacy
+
+You have achieved total world domination. Congratulations. This is, statistically speaking, a remarkable outcome, and you should allow yourself a moment to acknowledge it.
+
+The moment has passed. Now: the legacy.
+
+### What Legacy Requires
+
+Power that dies with you is not a legacy — it is an episode. A legacy requires that what you have built continues to function and compound after you are no longer directing it personally.
+
+This means:
+
+**Institutional durability** — your systems must be embedded in institutions that outlast any individual, including you. Laws, structures, norms, and processes that perpetuate the order you have established.
+
+**Successor cultivation** — identify, develop, and position the person or people who will carry this forward. This is the most emotionally difficult task for most leaders. It requires confronting your own mortality and your own replaceability. Do it anyway.
+
+**Narrative permanence** — the story of what you built and why must be told in a form that persists and that frames your legacy as you intend it to be understood. History is written by the winners, but only if the winners bother to write it.
+
+**The Final Lesson**: The truest measure of total world domination is not whether you rule everything while you are alive. It is whether the world you built continues to reflect your vision long after you are gone.
+
+You have the tools. Go build it.`,
+        },
+      ],
+    },
+  ];
+
+  const course3LessonIds: number[] = [];
+  let course3Lesson1Id: number;
+  let course3Lesson2Id: number;
+
+  for (let mi = 0; mi < c3Modules.length; mi++) {
+    const modData = c3Modules[mi];
+    const [mod] = db
+      .insert(schema.modules)
+      .values({
+        courseId: course3.id,
+        title: modData.title,
+        position: mi + 1,
+        createdAt: daysAgo(60 - mi),
+      })
+      .returning()
+      .all();
+
+    for (let li = 0; li < modData.lessons.length; li++) {
+      const lessonData = modData.lessons[li];
+      const [lesson] = db
+        .insert(schema.lessons)
+        .values({
+          moduleId: mod.id,
+          title: lessonData.title,
+          content: lessonData.content,
+          position: li + 1,
+          durationMinutes: lessonData.duration,
+          createdAt: daysAgo(60 - mi),
+        })
+        .returning()
+        .all();
+      course3LessonIds.push(lesson.id);
+      if (mi === 0 && li === 0) course3Lesson1Id = lesson.id;
+      if (mi === 0 && li === 1) course3Lesson2Id = lesson.id;
+    }
+  }
+
+  console.log(
+    `Created ${c3Modules.length} modules and ${course3LessonIds.length} lessons for "${course3.title}".`
+  );
+
   // ─── Quizzes ───
   // Add quizzes to some lessons in both courses
 
@@ -1466,9 +1950,9 @@ This may be the most important decision either of you ever makes.
 
   // ─── Enrollments ───
   // Varied enrollment patterns:
-  // - Emma: enrolled in both courses (nearly complete in course 1, mid-way in course 2)
+  // - Emma: enrolled in all three courses (nearly complete in course 1, mid-way in course 2, just started course 3)
   // - James: enrolled in course 1 only (completed)
-  // - Olivia: enrolled in both courses (just started course 1, mid-way in course 2)
+  // - Olivia: enrolled in both courses 1 & 2 (just started course 1, mid-way in course 2)
   // - Liam: enrolled in course 2 only (just started, abandoned)
   // - Sophia: enrolled in course 1 only (recently enrolled, barely started)
 
@@ -1476,6 +1960,7 @@ This may be the most important decision either of you ever makes.
     .values([
       { userId: students[0].id, courseId: course1.id, enrolledAt: daysAgo(50) },
       { userId: students[0].id, courseId: course2.id, enrolledAt: daysAgo(40) },
+      { userId: students[0].id, courseId: course3.id, enrolledAt: daysAgo(5) },
       {
         userId: students[1].id,
         courseId: course1.id,
@@ -1489,7 +1974,7 @@ This may be the most important decision either of you ever makes.
     ])
     .run();
 
-  console.log("Created 7 enrollments.");
+  console.log("Created 8 enrollments.");
 
   // ─── Lesson Progress ───
 
@@ -1555,6 +2040,10 @@ This may be the most important decision either of you ever makes.
   // Sophia (students[4]) — barely started course 1 (1 lesson done)
   markComplete(students[4].id, course1LessonIds[0], 12);
   markInProgress(students[4].id, course1LessonIds[1]);
+
+  // Emma — just started course 3 (lesson 1 completed, lesson 2 in progress)
+  markComplete(students[0].id, course3Lesson1Id!, 4);
+  markInProgress(students[0].id, course3Lesson2Id!);
 
   console.log("Created lesson progress records.");
 
@@ -1883,10 +2372,10 @@ This may be the most important decision either of you ever makes.
   console.log("  Users: 10 (1 admin, 3 instructors, 6 students)");
   console.log("  Categories: 6");
   console.log(
-    `  Courses: 3 (${course1LessonIds.length} + ${course2LessonIds.length} lessons + course 3 with 0 lessons so far)`
+    `  Courses: 3 (${course1LessonIds.length} + ${course2LessonIds.length} + ${course3LessonIds.length} lessons)`
   );
   console.log("  Quizzes: 3");
-  console.log("  Enrollments: 7");
+  console.log("  Enrollments: 8");
   console.log("  Comments: 6");
   console.log("  Purchases: 6 (5 individual + 1 team)");
   console.log("  Teams: 1 (with 5 coupons)");
