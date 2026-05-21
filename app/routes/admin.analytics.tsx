@@ -11,6 +11,7 @@ import { getUserById } from "~/services/userService";
 import { UserRole } from "~/db/schema";
 import {
   getAdminAnalyticsSummary,
+  getAdminRevenueTimeSeries,
   type TimePeriod,
 } from "~/services/analyticsService";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
@@ -23,6 +24,20 @@ import {
   Users,
 } from "lucide-react";
 import { Button } from "~/components/ui/button";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
+
+function formatChartRevenue(cents: number): string {
+  if (cents === 0) return "$0";
+  return `$${(cents / 100).toFixed(0)}`;
+}
 
 const VALID_PERIODS: TimePeriod[] = ["7d", "30d", "12m", "all"];
 
@@ -60,12 +75,13 @@ export async function loader({ request }: Route.LoaderArgs) {
     : "30d";
 
   const summary = getAdminAnalyticsSummary({ period });
+  const timeSeries = getAdminRevenueTimeSeries({ period });
 
-  return { summary, period };
+  return { summary, timeSeries, period };
 }
 
 export default function AdminAnalytics({ loaderData }: Route.ComponentProps) {
-  const { summary, period } = loaderData;
+  const { summary, timeSeries, period } = loaderData;
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
 
@@ -187,6 +203,64 @@ export default function AdminAnalytics({ loaderData }: Route.ComponentProps) {
               </CardContent>
             </Card>
           </div>
+        )}
+
+        {/* Revenue Chart */}
+        {hasData && (
+          <Card>
+            <CardHeader>
+              <CardTitle>Revenue Over Time</CardTitle>
+            </CardHeader>
+            <CardContent>
+              {timeSeries.length > 0 ? (
+                <ResponsiveContainer width="100%" height={300}>
+                  <LineChart data={timeSeries}>
+                    <CartesianGrid
+                      strokeDasharray="3 3"
+                      stroke="var(--border)"
+                    />
+                    <XAxis
+                      dataKey="date"
+                      tick={{ fontSize: 12, fill: "var(--muted-foreground)" }}
+                      tickLine={false}
+                      axisLine={false}
+                    />
+                    <YAxis
+                      tickFormatter={formatChartRevenue}
+                      tick={{ fontSize: 12, fill: "var(--muted-foreground)" }}
+                      tickLine={false}
+                      axisLine={false}
+                      width={60}
+                    />
+                    <Tooltip
+                      formatter={(value) => [
+                        formatPrice(value as number),
+                        "Revenue",
+                      ]}
+                      labelFormatter={(label) => `Date: ${label}`}
+                      contentStyle={{
+                        backgroundColor: "var(--card)",
+                        border: "1px solid var(--border)",
+                        borderRadius: "var(--radius)",
+                      }}
+                    />
+                    <Line
+                      type="monotone"
+                      dataKey="revenue"
+                      stroke="var(--primary)"
+                      strokeWidth={2}
+                      dot={false}
+                      activeDot={{ r: 4 }}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              ) : (
+                <div className="flex h-[300px] items-center justify-center text-muted-foreground">
+                  No revenue data for this period.
+                </div>
+              )}
+            </CardContent>
+          </Card>
         )}
       </div>
     </div>
