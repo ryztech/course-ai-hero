@@ -17,7 +17,7 @@ Before writing any code, align on the approach.
    - Files you will create or modify
    - Any schema or API shape decisions
    - Rough implementation order
-4. **Get approval** — ask the user: *"Does this look right, or should I adjust anything before I start?"*
+4. **Get approval** — ask the user: _"Does this look right, or should I adjust anything before I start?"_
 
 Do not begin implementation until the user approves the plan.
 
@@ -30,6 +30,16 @@ Work through the plan in order. For each step:
 - Move to the next step immediately
 
 Do not over-explain. Do not ask for permission between steps unless you discover something that materially changes the plan.
+
+### TDD cycle (new functionality)
+
+When adding new behaviour, follow red → green → refactor per logical unit:
+
+1. **Red** — write a test that specifies the expected behaviour and confirm it fails (`pnpm run test`)
+2. **Green** — write the minimum implementation to make it pass; don't clean up yet
+3. **Refactor** — tidy the implementation without changing behaviour; re-run tests to confirm still green
+
+Skip the TDD cycle for pure refactors, config changes, or UI-only work where unit tests don't apply.
 
 ## Phase 3: Validate
 
