@@ -12,7 +12,7 @@ describe("PPP Config", () => {
 
   describe("getTierForCountry", () => {
     it("returns tier 1 for US", () => {
-      expect(getTierForCountry("US")).toBe(999);
+      expect(getTierForCountry("US")).toBe(1);
     });
 
     it("returns tier 2 for Poland", () => {

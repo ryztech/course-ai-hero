@@ -13,7 +13,10 @@ import {
 } from "~/services/progressService";
 import { getCountryTierInfo, COUNTRIES } from "~/lib/ppp";
 import { isTeamAdmin } from "~/services/teamService";
-import { getNotifications, getUnreadCount } from "~/services/notificationService";
+import {
+  getNotifications,
+  getUnreadCount,
+} from "~/services/notificationService";
 import { UserRole } from "~/db/schema";
 
 export async function loader({ request }: Route.LoaderArgs) {
@@ -49,12 +52,14 @@ export async function loader({ request }: Route.LoaderArgs) {
     : [];
 
   const isInstructor = currentUser?.role === UserRole.Instructor;
-  const notifications = currentUserId && isInstructor
-    ? getNotifications(currentUserId, 5, 0)
-    : [];
-  const unreadCount = currentUserId && isInstructor
-    ? getUnreadCount(currentUserId)
-    : 0;
+  const userIsTeamAdmin = currentUserId ? isTeamAdmin(currentUserId) : false;
+  const showNotifications = isInstructor || userIsTeamAdmin;
+  const notifications =
+    currentUserId && showNotifications
+      ? getNotifications(currentUserId, 5, 0)
+      : [];
+  const unreadCount =
+    currentUserId && showNotifications ? getUnreadCount(currentUserId) : 0;
 
   return {
     users: users.map((u) => ({ id: u.id, name: u.name, role: u.role })),
@@ -70,7 +75,7 @@ export async function loader({ request }: Route.LoaderArgs) {
     devCountry,
     countryTierInfo,
     countries: COUNTRIES,
-    isTeamAdmin: currentUserId ? isTeamAdmin(currentUserId) : false,
+    isTeamAdmin: userIsTeamAdmin,
     notifications,
     unreadCount,
   };
