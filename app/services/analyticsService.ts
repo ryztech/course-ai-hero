@@ -1,4 +1,4 @@
-import { sql, eq } from "drizzle-orm";
+import { sql, eq, desc } from "drizzle-orm";
 import { db } from "~/db";
 import { purchases, enrollments, courseRatings, courses } from "~/db/schema";
 
@@ -224,6 +224,75 @@ export function getRevenueTimeSeries(opts: {
     date: key,
     revenue: revenueMap.get(key) ?? 0,
   }));
+}
+
+// ─── Admin Platform-Wide Analytics ───
+
+export interface AdminAnalyticsSummary {
+  totalRevenue: number;
+  totalEnrollments: number;
+  topEarningCourse: { title: string; revenue: number } | null;
+}
+
+export function getAdminAnalyticsSummary(opts: {
+  period: TimePeriod;
+}): AdminAnalyticsSummary {
+  const { period } = opts;
+  const startDate = getStartDate(period);
+
+  const dateFilter = startDate
+    ? sql`${purchases.createdAt} >= ${startDate}`
+    : sql`1`;
+
+  const revenueResult = db
+    .select({ total: sql<number>`coalesce(sum(${purchases.pricePaid}), 0)` })
+    .from(purchases)
+    .where(dateFilter)
+    .get();
+
+  const enrollmentDateFilter = startDate
+    ? sql`${enrollments.enrolledAt} >= ${startDate}`
+    : sql`1`;
+
+  const enrollmentResult = db
+    .select({ count: sql<number>`count(*)` })
+    .from(enrollments)
+    .where(enrollmentDateFilter)
+    .get();
+
+  // Top earning course: find the course with the highest total revenue in the period
+  const topCourseRow = db
+    .select({
+      courseId: purchases.courseId,
+      revenue: sql<number>`coalesce(sum(${purchases.pricePaid}), 0)`,
+    })
+    .from(purchases)
+    .where(dateFilter)
+    .groupBy(purchases.courseId)
+    .orderBy(desc(sql`coalesce(sum(${purchases.pricePaid}), 0)`))
+    .limit(1)
+    .get();
+
+  let topEarningCourse: AdminAnalyticsSummary["topEarningCourse"] = null;
+  if (topCourseRow && topCourseRow.revenue > 0) {
+    const topCourse = db
+      .select({ title: courses.title })
+      .from(courses)
+      .where(eq(courses.id, topCourseRow.courseId))
+      .get();
+    if (topCourse) {
+      topEarningCourse = {
+        title: topCourse.title,
+        revenue: topCourseRow.revenue,
+      };
+    }
+  }
+
+  return {
+    totalRevenue: revenueResult?.total ?? 0,
+    totalEnrollments: enrollmentResult?.count ?? 0,
+    topEarningCourse,
+  };
 }
 
 // ─── Per-Course Breakdown ───
