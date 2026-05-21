@@ -19,7 +19,7 @@ for ((i=1; i<=$2; i++)); do
   commits=$(git log -n 5 --format="%H%n%ad%n%B---" --date=short 2>/dev/null || echo "No commits found")
   prompt=$(cat ralph/prompt.md)
 
-  docker sandbox run claude . -- \
+  sbx run claude . -- \
     --verbose \
     --print \
     --output-format stream-json \
