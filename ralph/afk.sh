@@ -23,6 +23,7 @@ for ((i=1; i<=$2; i++)); do
     --verbose \
     --print \
     --output-format stream-json \
+    --dangerously-skip-permissions \
     "Previous commits: $commits Plan and PRD: $1 $prompt" \
   | grep --line-buffered '^{' \
   | tee "$tmpfile" \
