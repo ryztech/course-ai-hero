@@ -1,3 +1,26 @@
+# AI Hero Course
+
+Sandbox fork of Matt Pocock's AI Hero Course.
+
+Other repo copy for AFK pulling from GH Issues [here](https://github.com/ryztech/course-ai-hero-afk-copy)
+
+### Reference branches and commits
+
+#### `prd-do-work`
+
+* Add red/green/refactor TDD guidance to do-work skill
+* Add husky pre-commit hook with prettier, lint-staged, typecheck, and tests
+* 06.04.01: Add in-app notifications PRD and plan
+* 05.05.06: Add do-work skill
+
+#### `day-5-ralph`
+
+* 07.08.01: Hook up RALPH to GitHub issues
+* fix akf.sh
+* updated ralph to use sbx
+
+---
+
 <div align="center">
 <a href="https://www.aihero.dev/cohorts/ai-coding-for-real-engineers-with-claude-code-2026-04">
   <picture>
